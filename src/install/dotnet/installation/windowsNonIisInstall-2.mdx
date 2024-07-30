@@ -25,7 +25,7 @@ descriptionText: ""
     Here's an example command for performing a new agent install using the MSI installer. (For changes to an existing installation, use the `ADDLOCAL` command, explained below.) Replace the values with values relevant to your install.
 
     ```powershell
-    msiexec.exe /i C:\PATH_TO\newrelic-agent-win-x86-VERSION.msi /qb NR_LICENSE_KEY=YOUR_LICENSE_KEY INSTALLLEVEL=1
+    msiexec.exe /i C:\PATH_TO\newrelic-agent-win-x86-VERSION.msi /qb NR_LICENSE_KEY=YOUR_LICENSE_KEY NR_APP_NAME=YOUR_APP_NAME INSTALLLEVEL=1
     ```
 
     The `INSTALLLEVEL` can be either `1` or `50`:
@@ -36,7 +36,7 @@ descriptionText: ""
     Instead of using the `INSTALLLEVEL` presets, you can customize which features to install with the `ADDLOCAL` command shown below. This is also the command you'd use to update an existing installation. Here's an example command:
 
     ```powershell
-    msiexec.exe /i C:\PATH_TO\newrelic-agent-win-x86-VERSION.msi /qb NR_LICENSE_KEY=YOUR_LICENSE_KEY ADDLOCAL=OPTION_1, OPTION_2
+    msiexec.exe /i C:\PATH_TO\newrelic-agent-win-x86-VERSION.msi /qb NR_LICENSE_KEY=YOUR_LICENSE_KEY NR_APP_NAME=YOUR_APP_NAME ADDLOCAL=OPTION_1, OPTION_2
     ```
 
     Available options are:

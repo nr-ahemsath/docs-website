@@ -25,8 +25,12 @@ descriptionText: ""
     Here's the command to perform a new agent install using the MSI installer. (For changes to an existing installation, use the `ADDLOCAL` command, explained below.) Replace the values with values relevant to your install. 
 
     ```bash
-    msiexec.exe /i C:\PATH_TO\newrelic-agent-win-x86-VERSION.msi /qb NR_LICENSE_KEY=YOUR_LICENSE_KEY INSTALLLEVEL=1
+    msiexec.exe /i C:\PATH_TO\newrelic-agent-win-x86-VERSION.msi /qb NR_LICENSE_KEY=YOUR_LICENSE_KEY NR_APP_NAME=YOUR_APP_NAME NR_USE_APP_POOL_NAMING="False" INSTALLLEVEL=1
     ```
+
+    <Callout variant="important">
+      Setting "NR_USE_APP_POOL_NAMING" to "True" will configure the agent to use IIS app pool names for your application(s). This overrides any app name set with "NR_APP_NAME".
+    </Callout>
 
     The `INSTALLLEVEL` can be either `1` or `50`:
 
@@ -38,7 +42,7 @@ descriptionText: ""
     Here's an example. Replace the values with values relevant to your install. 
 
     ```bash
-    msiexec.exe /i C:\PATH_TO\newrelic-agent-win-x86-VERSION.msi /qb NR_LICENSE_KEY=YOUR_LICENSE_KEY ADDLOCAL=OPTION_1, OPTION_2
+    msiexec.exe /i C:\PATH_TO\newrelic-agent-win-x86-VERSION.msi /qb NR_LICENSE_KEY=YOUR_LICENSE_KEY NR_APP_NAME=YOUR_APP_NAME NR_USE_APP_POOL_NAMING="False" ADDLOCAL=OPTION_1, OPTION_2
     ```
 
     Available options are:
